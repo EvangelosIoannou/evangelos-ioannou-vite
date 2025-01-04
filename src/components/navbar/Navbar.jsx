@@ -87,12 +87,17 @@ export default function Navbar() {
     // },
     {
       title: "Games",
-      href: "#games",
+      href: "/games",
       className: "",
     },
     {
       title: "Projects",
       href: "/#portfolio",
+      className: "",
+    },
+    {
+      title: "Components",
+      href: "/components",
       className: "",
     },
     // {
@@ -162,7 +167,7 @@ export default function Navbar() {
   return (
     <NavbarContainer>
       <div className="left">
-        <a href="#home" className="logo">
+        <a href="/#home" className="logo">
           <span>Evangelos</span>
           {/* <span>Ioannou</span> */}
         </a>
@@ -188,7 +193,7 @@ const NavbarContainer = styled.header`
   left: 0;
   width: 100%;
   padding: 2rem 4rem;
-  background: transparent;
+  background-image: var(--grey-gradient);
   /* background: rgba(0, 0, 0, 0.3); */
   /* backdrop-filter: blur(10px); */
   display: flex;

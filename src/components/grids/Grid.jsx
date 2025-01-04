@@ -2,14 +2,14 @@ import React, { useEffect } from "react";
 import styled from "styled-components";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 
-export default function Grid({ gridTitle, filmData }) {
+export default function Grid({ gridTitle, gridData }) {
   return (
     <>
       <GridContainer>
         <h2>{gridTitle}</h2>
         {/* <div class="grid-content"  :style="{gridTemplateColumns: columns}"> */}
         <GridContent>
-          {filmData.map(({ title, premis, imageSrc, url }) => (
+          {gridData.map(({ title, premis, imageSrc, url }) => (
             // <GridWrap key={title} onPress={() => navigation.navigate("/")}>
             <Link className="grid-wrap" key={title} to={url}>
               <img src={imageSrc} alt="" />

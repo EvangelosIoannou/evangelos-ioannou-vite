@@ -22,6 +22,7 @@ import ComponentsView from "./views/ComponentsView";
 import ProjectsView from "./views/ProjectsView";
 import PlaygroundView from "./views/PlaygroundView";
 import Navbar from "./components/navbar/Navbar";
+import GamesHub from "./components/games-hub/GamesHub";
 
 function App() {
   return (
@@ -37,6 +38,7 @@ function App() {
             <Route exact path="/components" element={<ComponentsView />} />
             <Route exact path="/playground" element={<PlaygroundView />} />
             <Route exact path="/projects" element={<ProjectsView />} />
+            <Route exact path="/games" element={<GamesHub />} />
           </Routes>
         </RouterView>
       </AppContainer>
@@ -83,7 +85,7 @@ const RouterView = styled.main`
   flex: 1;
   height: 100vh;
   /* overflow: hidden; */
-  overflow-y: scroll;
+  /* overflow-y: scroll; */
 `;
 
 export default App;

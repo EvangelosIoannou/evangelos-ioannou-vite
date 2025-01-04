@@ -86,9 +86,9 @@ const HomeViewContainer = styled.main`
   display: flex;
   flex-direction: column;
   /* overflow: hidden; */
-  background-image: var(--gradient2);
+  /* background-image: var(--gradient2);
   background-size: 400%;
-  animation: bg-animation 20s infinite alternate;
+  animation: bg-animation 20s infinite alternate; */
   .sections {
     height: 100vh;
     /* height: calc(100vh - 70px); */
@@ -102,14 +102,11 @@ const HomeViewContainer = styled.main`
     &::-webkit-scrollbar {
       display: none;
     }
-    > * {
+    /* > * {
       width: 100%;
-      /* height: calc(100vh - 70px); */
+      height: calc(100vh - 70px);
       scroll-snap-align: start;
-      @media (max-width: 400px) {
-        /* height: 100vh; */
-      }
-    }
+    } */
   }
   @keyframes bg-animation {
     0% {

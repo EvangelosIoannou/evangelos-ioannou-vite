@@ -3,6 +3,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 :root {
+  --bg-color: var(--platinum);
+  --second-bg-color: #131313;
+  --text-color: white;
+  --main-color: #00ffee;
+
   --primary: red;
   --primary-alt: #22c55e;
   /* --main-color: #15023a; */
@@ -14,6 +19,13 @@
   --sidebar-width: 300px;
   --columns-4: repeat(4, minmax(0, 1fr));
   --columns-5: repeat(5, minmax(0, 1fr));
+
+  --silver: #c0c0c0;
+  --platinum: #e5e4e2;
+  --smoke: #848884;
+  --gunmetal-grey: #818589;
+  --steel-grey: #71797e;
+  --charcoal: #36454f;
 
   --red1: #fe1e00;
   --red2: rgb(254, 30, 0, 0.79);
@@ -31,15 +43,11 @@
   --blue4: #1296e0;
   --blue5: #abd9ff;
   --blue6: #00ffee;
+  --blue7: #00cfc1;
 
   --yellow1: #ffc045;
 
   --purple1: #570099;
-
-  --bg-color: #080808;
-  --second-bg-color: #131313;
-  --text-color: white;
-  --main-color: #abd9ff;
 
   --clr-primary: #29221d;
   --clr-primar-light: #473b33;
@@ -58,6 +66,26 @@
   --transition-default: all 300ms ease-in-out;
 
   --width: 768px;
+
+  --grey-gradient: linear-gradient(
+    50deg,
+    var(--charcoal),
+    var(--charcoal),
+    var(--gunmetal-grey),
+    var(--platinum),
+    var(--gunmetal-grey),
+    var(--charcoal),
+    var(--charcoal),
+    var(--charcoal)
+  );
+
+  --grey2: linear-gradient(
+    45deg,
+    var(--charcoal),
+    var(--silver),
+    var(--platinum),
+    var(--gunmetal-grey)
+  );
 
   --gradient: linear-gradient(
     45deg,
@@ -96,7 +124,8 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "PT Serif", serif;
+  font-family: "Roboto Slab", serif;
+  font-optical-sizing: auto;
   scroll-behavior: smooth;
 }
 /* ::-webkit-scrollbar {
@@ -144,9 +173,9 @@ body {
   // scrollbar-color: red;
   // scrollbar-width: thin; */
 }
-/* html {
+html {
   scroll-behavior: smooth;
-} */
+}
 @media (max-width: 1285px) {
   html {
     font-size: 55%;
@@ -196,7 +225,8 @@ h6 {
 }
 
 p {
-  font-size: 1.25rem;
+  font-size: 1.5rem;
+  color: black;
 }
 
 ul {

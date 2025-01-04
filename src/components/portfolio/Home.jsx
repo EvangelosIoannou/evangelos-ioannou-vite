@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import styled from "styled-components";
+import VideoButton from "../buttons/VideoButton";
 
 export default function Home() {
   // const homeRef = useRef();
@@ -24,9 +25,10 @@ export default function Home() {
           <br />
           Ioannou
         </h1>
-        <h3>
+        <VideoButton />
+        {/* <h3>
           <span>Games</span> Web <span>Mobile</span>
-        </h3>
+        </h3> */}
         {/* <h3 className="text-animation">
           I'm a <span></span>
         </h3> */}
@@ -69,14 +71,29 @@ const HomeContainer = styled.section`
   align-items: center;
   justify-content: center;
   gap: 15rem;
-  background-position: right; /* Positions the image on the right */
-  background-repeat: no-repeat; /* Prevents the image from repeating */
-  background-size: cover; /* Adjusts the size to fit content */
+  position: relative;
   /* background: url("/data/home/manatdesk1.jpg") center/cover no-repeat; */
   /* background-image: var(--gradient2);
   background-size: 400%;
   animation: bg-animation 20s infinite alternate; */
   //background-image: linear-gradient(to bottom right, red, black);
+  .background-image {
+    z-index: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-image: url("/data/home/spaceship1.jpg");
+    background-position: left top;
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    -webkit-filter: blur(5px);
+    -moz-filter: blur(5px);
+    -o-filter: blur(5px);
+    -ms-filter: blur(5px);
+    filter: blur(5px);
+  }
   .left {
     z-index: 1;
     width: 50%;
@@ -106,23 +123,6 @@ const HomeContainer = styled.section`
     box-shadow: 0 0 25px var(--main-color), 0 0 50px var(--main-color),
       0 0 100px var(--main-color);
   }
-  .background-image {
-    z-index: 0;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-image: url("/data/home/manatdesk1.png");
-    background-position: right top; /* Positions the image on the right */
-    background-repeat: no-repeat; /* Prevents the image from repeating */
-    -webkit-filter: blur(5px);
-    -moz-filter: blur(5px);
-    -o-filter: blur(5px);
-    -ms-filter: blur(5px);
-    filter: blur(5px);
-  }
   .title {
     background-image: var(--gradient);
     background-clip: text;
@@ -142,20 +142,22 @@ const HomeContainer = styled.section`
     color: var(--main-color);
   }
   h1 {
+    padding: 0 0 2rem 0;
     font-size: 7rem;
     font-weight: 700;
-    margin-top: 1.5rem;
     line-height: 1;
-    text-shadow: 2px 2px 0 #007bff, -2px -2px 0 #007bff, 2px -2px 0 #007bff,
-      -2px 2px 0 #007bff;
+    /* text-shadow: 2px 2px 0 #007bff, -2px -2px 0 #007bff, 2px -2px 0 #007bff,
+      -2px 2px 0 #007bff; */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7), 0 0 25px var(--main-color),
+      0 0 5px var(--main-color);
     /* text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7), 0 0 25px rgba(0, 255, 0, 0.7),
       0 0 5px rgba(255, 255, 0, 0.8); */
   }
   h3 {
     margin: 2rem 0rem;
     font-size: 3.5rem;
-    text-shadow: 2px 2px 0 black, -2px -2px 0 #007bff, 2px -2px 0 #007bff,
-      -2px 2px 0 #007bff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7), 0 0 25px var(--main-color),
+      0 0 5px var(--main-color);
   }
   p {
     font-size: 1.5rem;
@@ -172,7 +174,7 @@ const HomeContainer = styled.section`
     font-size: 2.5rem;
     border-radius: 50%;
     color: var(--main-color);
-    margin: 3rem 1.5rem 3rem 0;
+    margin: 0rem 0.75rem 3rem 0.75rem;
     transition: 0.3s ease-in-out;
   }
   .social-icons a:hover {

@@ -9,21 +9,20 @@ export default function AboutUs() {
           <h2>
             <span>About me.</span>
           </h2>
+          <h4>
+            "How is it possible that a combination of metals and plastics can
+            produce an image on a screen for me to play a video game on?"
+          </h4>
           <p>
-            How is it possible that a combination of metals and plastics can
-            produce an image on a screen for me to play a video game on? Is a
-            question I always asked myself whilst playing video games at a young
-            age.
+            - Is the question I always asked myself whilst playing video games
+            at a young age.
           </p>
           <p>
-            The complexity of computers always has facinated me to the point
-            where it became my goal to fully understand them.
-          </p>
-          <p>
-            The journey started from me being an early gamer as I wondered how
-            these <span>games</span> were created, the processes involved to
-            develop these applications and to make them available for me to play
-            - and so began the journey for me to understand them.
+            My life has steered me to fully understanding the complexity of
+            computers. The journey started from me being an early gamer as I
+            wondered how these <span>games</span> were created, the processes
+            involved to develop these applications and to make them available
+            for me to play - and so began the journey for me to understand them.
           </p>
           <p>
             The process overflowed into all things software and took me into
@@ -44,22 +43,18 @@ export default function AboutUs() {
 }
 const AboutUsContainer = styled.section`
   min-height: 100vh;
-  padding: 8rem 2rem 2rem;
-  /* background-color: blue; */
+  padding: 10rem 2rem 2rem;
   display: flex;
   flex-direction: column;
-  /* background-image: var(--gradient4); */
-  background: transparent;
   .content {
     display: flex;
     justify-content: center;
     flex: 1;
-    /* max-width: 1200px; */
-    margin: 0 auto;
     width: 100%;
     height: 100%;
     background-color: var(--dark-blue);
     border-radius: 2rem;
+    background: no-repeat center/cover url("/data/home/space1.jpg");
   }
   .left {
     width: 50%;
@@ -109,6 +104,7 @@ const AboutUsContainer = styled.section`
     font-size: 1.5rem;
     margin: 0.5rem 0;
     line-height: 1.2;
+    color: white;
     span {
       font-weight: bold;
     }

@@ -98,11 +98,11 @@ const CarouselContainer = styled.section`
   }
   .pagination {
     position: absolute;
-    bottom: 0.5rem;
+    bottom: 2.5rem;
     left: 50%;
     translate: -50%;
     display: flex;
-    gap: 0.5rem;
+    gap: 1.5rem;
   }
   .img-slider-img {
     object-fit: cover;

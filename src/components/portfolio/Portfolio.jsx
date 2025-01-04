@@ -94,9 +94,8 @@ const PortfolioContainer = styled.section`
   padding: 8rem 2rem 2rem;
   height: 100vh;
   min-height: 100vh;
-  /* background-color: var(--blue1); */
-  /* background-image: var(--gradient2); */
-  background: transparent;
+  background-color: var(--charcoal);
+  /* background-image: var(--grey2); */
   display: flex;
   flex-direction: column;
   align-items: center;

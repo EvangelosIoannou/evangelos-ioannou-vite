@@ -9,6 +9,9 @@ import modelx from "../assets/images/model-x.jpg";
 import modely from "../assets/images/model-y.jpg";
 
 import AdminDashboard from "../components/admin-dashboard/AdminDashboard.jsx";
+import { filmData } from "../../public/data/films/filmData.js";
+import VideoOnHover from "../components/buttons/VideoOnHover.jsx";
+import Todo from "../components/todo/Todo.jsx";
 
 const IMAGES = [
   { url: car1, alt: "Car One" },
@@ -22,20 +25,44 @@ export default function ComponentsView() {
   return (
     <ComponentsViewContainer>
       <h1>Components</h1>
+      <p>This page is a testing ground for components and features</p>
       <section className="carousel-section">
         <h2>Carousels</h2>
         <Carousel images={IMAGES} />
       </section>
-      <Grid gridTitle="Films" />
-      <AdminDashboard />
+      <section className="grid-section">
+        <h2>Grids</h2>
+        <Grid gridTitle="Films" gridData={filmData} />
+      </section>
+      <section className="button-section">
+        <h2>Buttons</h2>
+        <VideoOnHover />
+      </section>
+      <section className="admin-section">
+        <h2>Admin Dashboard</h2>
+        <AdminDashboard />
+      </section>
+      <section className="todo-section">
+        <h2>Todo Section</h2>
+        <Todo />
+      </section>
     </ComponentsViewContainer>
   );
 }
 const ComponentsViewContainer = styled.main`
-  overflow: hidden;
+  /* overflow: hidden; */
+  padding: 8rem 0rem 0rem;
   h1 {
     display: flex;
     justify-content: center;
+    color: black;
+  }
+  h2 {
+    color: black;
+    padding: 2rem 2rem 2rem;
+  }
+  p {
+    padding: 0rem 2rem;
   }
   img {
     display: block;
