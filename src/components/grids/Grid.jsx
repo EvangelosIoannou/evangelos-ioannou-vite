@@ -13,7 +13,7 @@ export default function Grid({ gridTitle, gridData }) {
             // <GridWrap key={title} onPress={() => navigation.navigate("/")}>
             <Link className="grid-wrap" key={title} to={url}>
               <img src={imageSrc} alt="" />
-              <h3>{title}</h3>
+              {/* <h3>{title}</h3> */}
             </Link>
           ))}
         </GridContent>
@@ -40,12 +40,8 @@ const GridContainer = styled.div`
     text-align: center;
     white-space: nowrap;
     h2 {
-      margin-top: 0.5rem;
       text-align: center;
       max-width: 100%;
-      font-size: 1rem;
-      text-wrap: wrap;
-      position: relative;
     }
 
     img {

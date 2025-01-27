@@ -39,9 +39,9 @@ export default function Home() {
           <a href="https://github.com/EvangelosIoannou">
             <i className="bx bxl-github"></i>
           </a>
-          <a href="#">
+          {/* <a href="#">
             <i className="bx bxl-instagram-alt"></i>
-          </a>
+          </a> */}
           {/* <a href="#">
             <i className="bx bxl-twitter"></i>
           </a> */}

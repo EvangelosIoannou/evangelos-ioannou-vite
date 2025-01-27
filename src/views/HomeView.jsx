@@ -62,7 +62,6 @@ export default function HomeView() {
       <Home />
       <AboutUs />
       <Portfolio />
-      <Contact />
       <Footer />
       {/* <Projects />
       <Cards /> */}

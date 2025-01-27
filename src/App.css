@@ -6,7 +6,7 @@
   --bg-color: var(--platinum);
   --second-bg-color: #131313;
   --text-color: white;
-  --main-color: #00ffee;
+  --main-color: var(--blue6);
 
   --primary: red;
   --primary-alt: #22c55e;
@@ -26,6 +26,7 @@
   --gunmetal-grey: #818589;
   --steel-grey: #71797e;
   --charcoal: #36454f;
+  --unavailable: #36454f;
 
   --red1: #fe1e00;
   --red2: rgb(254, 30, 0, 0.79);
@@ -69,6 +70,18 @@
 
   --grey-gradient: linear-gradient(
     50deg,
+    var(--charcoal),
+    var(--charcoal),
+    var(--gunmetal-grey),
+    var(--platinum),
+    var(--gunmetal-grey),
+    var(--charcoal),
+    var(--charcoal),
+    var(--charcoal)
+  );
+
+  --grey-gradient2: linear-gradient(
+    90deg,
     var(--charcoal),
     var(--charcoal),
     var(--gunmetal-grey),
@@ -157,9 +170,7 @@
 // } */
 
 body {
-  /* background: var(--main); */
   background: var(--bg-color);
-  color: var(--text-color);
   font-family: var(--font-family-bai);
 }
 #app {

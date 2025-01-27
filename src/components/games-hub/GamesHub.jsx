@@ -8,12 +8,17 @@ export default function GamesHub() {
   return (
     <GamesHubContainer>
       <h1>Games Hub</h1>
-      <Grid gridTitle="Games" gridData={gamesData} />
+      <h3>Future games...</h3>
+      <Grid gridTitle="" gridData={gamesData} />
     </GamesHubContainer>
   );
 }
 const GamesHubContainer = styled.main`
+  padding: 14rem 2rem 2rem;
   h1 {
     color: black;
+    text-align: center;
+    max-width: 100%;
+    font-family: "Press Start 2P", system-ui;
   }
 `;

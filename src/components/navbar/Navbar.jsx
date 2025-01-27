@@ -90,11 +90,11 @@ export default function Navbar() {
       href: "/games",
       className: "",
     },
-    {
-      title: "Projects",
-      href: "/#portfolio",
-      className: "",
-    },
+    // {
+    //   title: "Projects",
+    //   href: "/#portfolio",
+    //   className: "",
+    // },
     {
       title: "Components",
       href: "/components",
@@ -117,7 +117,7 @@ export default function Navbar() {
     // },
     {
       title: "Contact",
-      href: "#contact",
+      href: "/contact",
       className: "",
     },
   ];

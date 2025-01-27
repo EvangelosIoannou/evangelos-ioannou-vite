@@ -49,10 +49,8 @@ const AboutUsContainer = styled.section`
   .content {
     display: flex;
     justify-content: center;
-    flex: 1;
     width: 100%;
     height: 100%;
-    background-color: var(--dark-blue);
     border-radius: 2rem;
     background: no-repeat center/cover url("/data/home/space1.jpg");
   }
@@ -99,6 +97,9 @@ const AboutUsContainer = styled.section`
       width: 100px;
       transform-origin: left center;
     }
+  }
+  h4 {
+    color: white;
   }
   p {
     font-size: 1.5rem;

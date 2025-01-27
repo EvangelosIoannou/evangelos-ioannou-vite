@@ -1,27 +1,35 @@
 import React from "react";
 import styled from "styled-components";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function VideoButton() {
+  const navigate = useNavigate();
   return (
     <VideoButtonContainer>
-      <div className="wrap">
-        <img src="/data/images/Games.png" alt="" />
-        <video autoPlay={true} muted={true} loop={true} playsInline={true}>
-          <source src="/data/videos/chess-game.mp4" type="video/mp4" />
-        </video>
-      </div>
-      <div className="wrap">
-        <img src="/data/images/Web.png" alt="" />
-        <video autoPlay={true} muted={true} loop={true} playsInline={true}>
-          <source src="/data/videos/web1.mp4" type="video/mp4" />
-        </video>
-      </div>
-      <div className="wrap">
-        <img src="/data/images/Mobile.png" alt="" />
-        <video autoPlay={true} muted={true} loop={true} playsInline={true}>
-          <source src="/data/videos/mobile2.mp4" type="video/mp4" />
-        </video>
-      </div>
+      <Link to="/games">
+        <div className="wrap">
+          <img src="/data/images/Games.png" alt="" />
+          <video autoPlay={true} muted={true} loop={true} playsInline={true}>
+            <source src="/data/videos/chess-game.mp4" type="video/mp4" />
+          </video>
+        </div>
+      </Link>
+      <Link to="/web">
+        <div className="wrap">
+          <img src="/data/images/Web.png" alt="" />
+          <video autoPlay={true} muted={true} loop={true} playsInline={true}>
+            <source src="/data/videos/web1.mp4" type="video/mp4" />
+          </video>
+        </div>
+      </Link>
+      <Link to="/mobile">
+        <div className="wrap">
+          <img src="/data/images/Mobile.png" alt="" />
+          <video autoPlay={true} muted={true} loop={true} playsInline={true}>
+            <source src="/data/videos/mobile2.mp4" type="video/mp4" />
+          </video>
+        </div>
+      </Link>
     </VideoButtonContainer>
   );
 }

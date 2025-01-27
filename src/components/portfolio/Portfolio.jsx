@@ -9,15 +9,16 @@ import {
   // contentPortfolio,
   gamesPortfolio,
 } from "../../../public/data/portfolio/portfolioData";
+import { Link } from "react-router-dom";
 
 export default function Portfolio() {
   const [selected, setSelected] = useState("featured");
   const [data, setData] = useState([]);
   const list = [
-    {
-      id: "featured",
-      title: "Featured",
-    },
+    // {
+    //   id: "featured",
+    //   title: "Featured",
+    // },
     {
       id: "web",
       title: "Web",
@@ -30,14 +31,6 @@ export default function Portfolio() {
       id: "mobile",
       title: "Mobile",
     },
-    // {
-    //   id: "design",
-    //   title: "Design",
-    // },
-    // {
-    //   id: "content",
-    //   title: "Content",
-    // },
   ];
   useEffect(() => {
     switch (selected) {
@@ -49,12 +42,6 @@ export default function Portfolio() {
         break;
       case "mobile":
         setData(mobilePortfolio);
-        break;
-      case "design":
-        setData(designPortfolio);
-        break;
-      case "content":
-        setData(contentPortfolio);
         break;
       case "games":
         setData(gamesPortfolio);
@@ -80,10 +67,17 @@ export default function Portfolio() {
         </ul>
         <div className="items-container">
           {data.map((d) => (
-            <div className="item" key={d.id}>
-              <img src={d.imgSrc} alt="" />
-              <h3>{d.title}</h3>
-            </div>
+            <a
+              href={d.available ? d.url : undefined}
+              target="_blank"
+              onClick={(e) => (d.available ? "" : e.preventDefault())} // Prevent default if disabled
+              key={d.id}
+            >
+              <div className={d.available ? "item" : "item unavailable"}>
+                <img src={d.imgSrc} alt="" />
+                <h3>{d.title}</h3>
+              </div>
+            </a>
           ))}
         </div>
       </div>
@@ -95,10 +89,32 @@ const PortfolioContainer = styled.section`
   height: 100vh;
   min-height: 100vh;
   background-color: var(--charcoal);
-  /* background-image: var(--grey2); */
+  /* background-image: var(--grey-gradient2); */
   display: flex;
   flex-direction: column;
   align-items: center;
+  h1 {
+    padding-top: 8rem;
+    color: var(--blue6);
+
+    @include mobile {
+      font-size: 20px;
+    }
+  }
+
+  ul {
+    margin: 10px;
+    padding: 0;
+    padding-top: 2rem;
+    list-style: none;
+    display: flex;
+
+    @include mobile {
+      margin: 10px 0;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  }
   .content {
     display: flex;
     flex-direction: column;
@@ -134,10 +150,7 @@ const PortfolioContainer = styled.section`
       position: relative;
       transition: all 0.5s ease;
       cursor: pointer;
-
-      img {
-        border-radius: 20px;
-      }
+      background-color: white;
 
       @include mobile {
         width: 130px;
@@ -150,9 +163,10 @@ const PortfolioContainer = styled.section`
       }
 
       img {
+        border-radius: 20px;
         width: 100%;
         height: 100%;
-        object-fit: cover;
+        object-fit: contain;
         z-index: 1;
       }
 
@@ -164,27 +178,8 @@ const PortfolioContainer = styled.section`
         }
       }
     }
-  }
-  h1 {
-    padding-top: 8rem;
-    color: #0a91ab;
-
-    @include mobile {
-      font-size: 20px;
-    }
-  }
-
-  ul {
-    margin: 10px;
-    padding: 0;
-    padding-top: 2rem;
-    list-style: none;
-    display: flex;
-
-    @include mobile {
-      margin: 10px 0;
-      flex-wrap: wrap;
-      justify-content: center;
+    .unavailable {
+      filter: brightness(0.5);
     }
   }
 `;

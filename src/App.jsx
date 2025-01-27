@@ -23,6 +23,7 @@ import ProjectsView from "./views/ProjectsView";
 import PlaygroundView from "./views/PlaygroundView";
 import Navbar from "./components/navbar/Navbar";
 import GamesHub from "./components/games-hub/GamesHub";
+import Contact from "./components/contact/Contact";
 
 function App() {
   return (
@@ -36,9 +37,12 @@ function App() {
             <Route exact path="/about" element={<AboutUsView />} />
             <Route exact path="/images" element={<ImagesView />} />
             <Route exact path="/components" element={<ComponentsView />} />
+            <Route exact path="/contact" element={<Contact />} />
             <Route exact path="/playground" element={<PlaygroundView />} />
             <Route exact path="/projects" element={<ProjectsView />} />
             <Route exact path="/games" element={<GamesHub />} />
+            <Route exact path="/web" element={<GamesHub />} />
+            <Route exact path="/mobile" element={<GamesHub />} />
           </Routes>
         </RouterView>
       </AppContainer>
