@@ -18,7 +18,7 @@ const PortfolioListContainer = styled.li`
   margin: 0 2rem;
   border-radius: 10px;
   cursor: pointer;
-  color: white;
+  color: var(--plumbeous12);
 
   @include mobile {
     margin-right: 20px;

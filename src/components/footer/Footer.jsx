@@ -11,31 +11,32 @@ export default function Footer() {
         <a href="#">
           <i className="bx bxl-github"></i>
         </a>
-        <a href="#">
+        {/* <a href="#">
           <i className="bx bxl-instagram-alt"></i>
         </a>
         <a href="#">
           <i className="bx bxl-twitter"></i>
-        </a>
+        </a> */}
       </div>
       <ul className="list">
-        <li>
+        {/* <li>
           <a href="#">FAQ</a>
-        </li>
-        <li>
+        </li> */}
+        {/* <li>
           <a href="#">Services</a>
+        </li> */}
+        <li>
+          <a href="#about">About Me</a>
         </li>
         <li>
-          <a href="#">About Me</a>
+          <a href="/contact">Contact</a>
         </li>
-        <li>
-          <a href="#">Contact</a>
-        </li>
-        <li>
+        {/* <li>
           <a href="#">Testimonials</a>
-        </li>
+        </li> */}
       </ul>
-      <p className="copyright">© Evangelos Ioannou | All Rights Reserved</p>
+      <p className="copyright">© Evangelos Ioannou</p>{" "}
+      {/* | All Rights Reserved */}
     </FooterContainer>
   );
 }
@@ -45,7 +46,7 @@ const FooterContainer = styled.footer`
   height: 300px !important;
   width: 100%;
   padding: 40px 0;
-  background-color: var(--second-bg-color);
+  background-color: var(--plumbeous16);
   @media (max-width: 991px) {
     padding: 2rem 3%;
   }

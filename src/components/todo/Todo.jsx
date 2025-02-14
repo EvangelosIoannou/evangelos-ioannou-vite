@@ -64,8 +64,7 @@ export default function Todo() {
 }
 const TodoContainer = styled.div`
   font-family: "Inter", sans-serif;
-  margin: 0;
-  padding: 0;
+  padding: 2rem;
   box-sizing: border-box;
   color: #202124;
   h1,
@@ -88,6 +87,7 @@ const TodoContainer = styled.div`
   header {
     display: flex;
     align-items: stretch;
+    padding-bottom: 2rem;
   }
 
   header,

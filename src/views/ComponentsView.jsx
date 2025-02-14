@@ -12,6 +12,10 @@ import AdminDashboard from "../components/admin-dashboard/AdminDashboard.jsx";
 import { filmData } from "../../public/data/films/filmData.js";
 import VideoOnHover from "../components/buttons/VideoOnHover.jsx";
 import Todo from "../components/todo/Todo.jsx";
+import ImageAndText from "../components/image-and-text/ImageAndText.jsx";
+import TitleAndSubtitle from "../components/text/TitleAndSubtitle.jsx";
+import Marquee from "../components/marquee/Marquee.jsx";
+import Tiles from "../components/tiles/Tiles.jsx";
 
 const IMAGES = [
   { url: car1, alt: "Car One" },
@@ -24,15 +28,18 @@ const IMAGES = [
 export default function ComponentsView() {
   return (
     <ComponentsViewContainer>
-      <h1>Components</h1>
-      <p>This page is a testing ground for components and features</p>
+      <TitleAndSubtitle
+        title="Components"
+        subtitle="Housing area for components and features"
+      />
       <section className="carousel-section">
         <h2>Carousels</h2>
         <Carousel images={IMAGES} />
       </section>
       <section className="grid-section">
         <h2>Grids</h2>
-        <Grid gridTitle="Films" gridData={filmData} />
+        <Grid gridTitle="" gridData={filmData} />
+        <Tiles img={car1} title="Title" subtitle="subtitle" />
       </section>
       <section className="button-section">
         <h2>Buttons</h2>
@@ -46,20 +53,34 @@ export default function ComponentsView() {
         <h2>Todo Section</h2>
         <Todo />
       </section>
+      <section className="image-and-text-section">
+        <h2>Image and Text</h2>
+        <ImageAndText />
+      </section>
+      <section className="text-section">
+        <h2>Text</h2>
+      </section>
+      <section className="marquee-section">
+        <h2>Marquee</h2>
+        <Marquee />
+      </section>
     </ComponentsViewContainer>
   );
 }
 const ComponentsViewContainer = styled.main`
-  /* overflow: hidden; */
-  padding: 8rem 0rem 0rem;
+  section {
+    padding: 2rem;
+  }
   h1 {
     display: flex;
     justify-content: center;
-    color: black;
+    text-decoration: underline;
   }
   h2 {
     color: black;
     padding: 2rem 2rem 2rem;
+    text-decoration: underline;
+    width: 100%;
   }
   p {
     padding: 0rem 2rem;
@@ -87,5 +108,28 @@ const ComponentsViewContainer = styled.main`
     flex-direction: column;
     width: 100%;
     align-items: center;
+  }
+  .grid-section {
+  }
+  .text-section {
+    h2 {
+      text-shadow: black 12px -12px 10px, teal -12px 12px 10px;
+    }
+  }
+  section:nth-child(even) {
+    background-color: var(--plumbeous2);
+    /* background-image: var(--blue-grey-gradient); */
+    /* background-image: url("/data/images/blue-grey-background2.jpg"); */
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white; /* Ensure text is readable on dark background */
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  section:nth-child(odd) {
+    background-color: var(--plumbeous11);
+    /* background-image: var(--blue-grey-gradient2); */
+    color: black;
   }
 `;

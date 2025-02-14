@@ -1,80 +1,8 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, forwardRef } from "react";
 import styled from "styled-components";
 // import navbarData from "../sidebar/navbarData";
 
-export default function Navbar() {
-  // let menuIcon = document.querySelector("#menu-icon");
-  // let navbar = document.querySelector(".navbar");
-  // let sections = document.querySelector("section");
-  // let navLinks = document.querySelector("header nav a");
-
-  // window.onscroll = () => {
-  //   sections.forEach((sec) => {
-  //     let top = window.scrollY;
-  //     let offset = sec.offsetTop - 150;
-  //     let height = sec.offsetHeight;
-  //     let id = sec.getAttribute("id");
-
-  //     if (top >= offset && top < offset + height) {
-  //       navLinks.forEach((links) => {
-  //         links.ClassList.remove("active");
-  //         document
-  //           .querySelector("nav a [href*=" + id + " ]")
-  //           .classList.add("active");
-  //       });
-  //     }
-  //   });
-  // };
-
-  // menuIcon.onclick = () => {
-  //   menuIcon.classList.toggle("bx-x");
-  //   navbar.classList.toggle("active");
-  // };
-
-  // useEffect(() => {
-  //   // const sections = sectionsRef.current
-  //   //   ? [...sectionsRef.current.querySelectorAll(":scope > section")]
-  //   //   : [];
-  //   const navLinks = navbarRef.current
-  //     ? [...navbarRef.current.querySelectorAll(":scope > a")]
-  //     : [];
-  //   // console.log(sections);
-  //   console.log(navLinks);
-  //   window.onscroll = () => {
-  //     let sections = document.querySelector("section");
-  //     console.log(sections);
-  //     sections.forEach((sec) => {
-  // let top = window.scrollY;
-  // let offset = sec.offsetTop - 150;
-  // let height = sec.offsetHeight;
-  // let id = sec.getAttribute("id");
-
-  //       console.log("id", id);
-
-  // if (top >= offset && top < offset + height) {
-  //   navLinks.forEach((links) => {
-  //     links.ClassList.remove("active");
-  //     document
-  //       .querySelector("nav a [href*=]" + id + " ]")
-  //       .classList.add("active");
-  //   });
-  // }
-  //     });
-  //   };
-  // });
-
-  // useEffect(() => {
-  //   console.log("hello");
-  //   console.log(window.scrollY);
-  // }, [navbarRef]);
-
-  // const navLinks = sectionsRef.current
-  //   ? [
-  //       ...sectionsRef.current.querySelectorAll(
-  //         ":scope > nav a [href*=]" + id + " ]"
-  //       ),
-  //     ]
-  //   : [];
+const Navbar = forwardRef((props, ref) => {
   const menuIconRef = useRef(null);
   const navbarRef = useRef(null);
   const sectionsRef = useRef(null);
@@ -85,6 +13,11 @@ export default function Navbar() {
     //   href: "/#home",
     //   className: "active",
     // },
+    {
+      title: "Services",
+      href: "/services",
+      className: "",
+    },
     {
       title: "Games",
       href: "/games",
@@ -103,11 +36,6 @@ export default function Navbar() {
     // {
     //   title: "Education",
     //   href: "#education",
-    //   className: "",
-    // },
-    // {
-    //   title: "Services",
-    //   href: "#services",
     //   className: "",
     // },
     // {
@@ -165,7 +93,7 @@ export default function Navbar() {
   ));
 
   return (
-    <NavbarContainer>
+    <NavbarContainer ref={ref}>
       <div className="left">
         <a href="/#home" className="logo">
           <span>Evangelos</span>
@@ -186,14 +114,17 @@ export default function Navbar() {
       </div>
     </NavbarContainer>
   );
-}
+});
+
+export default Navbar;
 const NavbarContainer = styled.header`
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   padding: 2rem 4rem;
-  background-image: var(--grey-gradient);
+  background-image: var(--plumbeous-gradient1);
+  height: 60px;
   /* background: rgba(0, 0, 0, 0.3); */
   /* backdrop-filter: blur(10px); */
   display: flex;
@@ -213,7 +144,7 @@ const NavbarContainer = styled.header`
     transform: scale(1.1);
   }
   .logo span {
-    text-shadow: 0 0 15px var(--main-color);
+    text-shadow: 0 0 15px var(--blue6);
   }
   .navbar a {
     font-size: 1.8rem;
@@ -226,12 +157,12 @@ const NavbarContainer = styled.header`
   }
   .navbar a:hover,
   .navbar a.active {
-    color: var(--main-color);
-    border-bottom: 3px solid var(--main-color);
+    color: var(--blue6);
+    border-bottom: 3px solid var(--blue6);
   }
   #menu-icon {
     font-size: 3.6rem;
-    color: var(--main-color);
+    color: var(--blue6);
     cursor: pointer;
     display: none;
   }
@@ -249,8 +180,8 @@ const NavbarContainer = styled.header`
       /* background: rgba(0, 0, 0, 0.8);
       backdrop-filter: blur(20px); */
       border-bottom-left-radius: 2rem;
-      border-left: 2px solid var(--main-color);
-      border-bottom: 2px solid var(--main-color);
+      border-left: 2px solid var(--blue6);
+      border-bottom: 2px solid var(--blue6);
       display: none;
     }
     .navbar.active {

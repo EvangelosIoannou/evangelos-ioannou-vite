@@ -14,7 +14,7 @@ export default function GamesHub() {
   );
 }
 const GamesHubContainer = styled.main`
-  padding: 14rem 2rem 2rem;
+  padding: 4rem 2rem 2rem;
   h1 {
     color: black;
     text-align: center;

@@ -6,6 +6,7 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
+import { useEffect, useState, useRef } from "react";
 import ListUser from "./components/crud/ListUser";
 import CreateUser from "./components/crud/CreateUser";
 import Nasa from "./components/nasa/Nasa";
@@ -24,17 +25,36 @@ import PlaygroundView from "./views/PlaygroundView";
 import Navbar from "./components/navbar/Navbar";
 import GamesHub from "./components/games-hub/GamesHub";
 import Contact from "./components/contact/Contact";
+import Services from "./components/services/Services";
+import AboutUs from "./components/about-us/AboutUs";
 
 function App() {
+  const navbarRef = useRef(null);
+  const [navHeight, setNavHeight] = useState(60); // Default height
+
+  useEffect(() => {
+    if (navbarRef.current) {
+      setNavHeight(navbarRef.current.offsetHeight);
+    }
+
+    const handleResize = () => {
+      if (navbarRef.current) {
+        setNavHeight(navbarRef.current.offsetHeight);
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
   return (
     <Router>
       <AppContainer>
         {/* <Sidebar /> */}
-        <Navbar />
-        <RouterView>
+        <Navbar ref={navbarRef} />
+        <RouterView $navHeight={navHeight}>
           <Routes>
             <Route exact path="/" element={<HomeView />} />
-            <Route exact path="/about" element={<AboutUsView />} />
+            <Route exact path="/about" element={<AboutUs />} />
             <Route exact path="/images" element={<ImagesView />} />
             <Route exact path="/components" element={<ComponentsView />} />
             <Route exact path="/contact" element={<Contact />} />
@@ -43,6 +63,7 @@ function App() {
             <Route exact path="/games" element={<GamesHub />} />
             <Route exact path="/web" element={<GamesHub />} />
             <Route exact path="/mobile" element={<GamesHub />} />
+            <Route exact path="/services" element={<Services />} />
           </Routes>
         </RouterView>
       </AppContainer>
@@ -86,8 +107,10 @@ const AppContainer = styled.div`
   }
 `;
 const RouterView = styled.main`
-  flex: 1;
-  height: 100vh;
+  /* flex: 1; */
+  width: 100%;
+  padding-top: ${(props) => props.$navHeight}px;
+  /* height: 100vh; */
   /* overflow: hidden; */
   /* overflow-y: scroll; */
 `;

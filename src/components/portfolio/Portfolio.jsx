@@ -12,7 +12,7 @@ import {
 import { Link } from "react-router-dom";
 
 export default function Portfolio() {
-  const [selected, setSelected] = useState("featured");
+  const [selected, setSelected] = useState("web");
   const [data, setData] = useState([]);
   const list = [
     // {
@@ -34,9 +34,6 @@ export default function Portfolio() {
   ];
   useEffect(() => {
     switch (selected) {
-      case "featured":
-        setData(featuredPortfolio);
-        break;
       case "web":
         setData(webPortfolio);
         break;
@@ -47,7 +44,7 @@ export default function Portfolio() {
         setData(gamesPortfolio);
         break;
       default:
-        setData(featuredPortfolio);
+        setData(webPortfolio);
     }
   }, [selected]);
   return (
@@ -85,7 +82,6 @@ export default function Portfolio() {
   );
 }
 const PortfolioContainer = styled.section`
-  padding: 8rem 2rem 2rem;
   height: 100vh;
   min-height: 100vh;
   background-color: var(--charcoal);
@@ -93,36 +89,13 @@ const PortfolioContainer = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
-  h1 {
-    padding-top: 8rem;
-    color: var(--blue6);
-
-    @include mobile {
-      font-size: 20px;
-    }
-  }
-
-  ul {
-    margin: 10px;
-    padding: 0;
-    padding-top: 2rem;
-    list-style: none;
-    display: flex;
-
-    @include mobile {
-      margin: 10px 0;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-  }
   .content {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
     height: 100%;
-    background-color: var(--blue1);
-    border-radius: 2rem;
+    background-color: var(--plumbeous11);
   }
 
   .items-container {
@@ -180,6 +153,28 @@ const PortfolioContainer = styled.section`
     }
     .unavailable {
       filter: brightness(0.5);
+    }
+  }
+  h1 {
+    padding-top: 8rem;
+    color: var(--main-color);
+
+    @include mobile {
+      font-size: 20px;
+    }
+  }
+
+  ul {
+    margin: 10px;
+    padding: 0;
+    padding-top: 2rem;
+    list-style: none;
+    display: flex;
+
+    @include mobile {
+      margin: 10px 0;
+      flex-wrap: wrap;
+      justify-content: center;
     }
   }
 `;

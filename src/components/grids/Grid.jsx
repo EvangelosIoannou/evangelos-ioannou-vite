@@ -22,7 +22,7 @@ export default function Grid({ gridTitle, gridData }) {
   );
 }
 const GridContainer = styled.div`
-  margin: 3rem;
+  padding: 3rem;
   .grid-wrap {
     border-radius: 10px;
     cursor: pointer;

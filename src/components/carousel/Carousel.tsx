@@ -27,10 +27,10 @@ export default function Carousel({ images }: CarouselProps) {
 
   return (
     <CarouselContainer aria-label="Image Slider">
-      <a href="#after-image-slider-controls" className="skip-link">
-        Skip Image Slider Controls
-      </a>
       <div className="img-container">
+        <a href="#after-image-slider-controls" className="skip-link">
+          Skip Image Slider Controls
+        </a>
         {images.map(({ url, alt }, index) => (
           <img
             key={url}
@@ -41,46 +41,46 @@ export default function Carousel({ images }: CarouselProps) {
             style={{ translate: `${-100 * imageIndex}%` }}
           />
         ))}
-      </div>
-      <SliderBtn
-        className="img-slider-btn"
-        onClick={showPrevImage}
-        style={{ left: 0 }}
-        aria-label="View Previous Image"
-      >
-        <span className="material-icons" aria-hidden>
-          keyboard_double_arrow_left
-        </span>
-      </SliderBtn>
-      <SliderBtn
-        className="img-slider-btn"
-        onClick={showNextImage}
-        style={{ right: 0 }}
-        aria-label="View Next Image"
-      >
-        <span className="material-icons" aria-hidden>
-          keyboard_double_arrow_right
-        </span>
-      </SliderBtn>
-      <div className="pagination">
-        {images.map((_, index) => (
-          <button
-            key={index}
-            className="img-slider-dot-btn"
-            aria-label={`View Image ${index + 1}`}
-            onClick={() => setImageIndex(index)}
-          >
-            {index === imageIndex ? (
-              <span className="material-symbols-outlined" aria-hidden>
-                radio_button_checked
-              </span>
-            ) : (
-              <span className="material-symbols-outlined" aria-hidden>
-                radio_button_unchecked
-              </span>
-            )}
-          </button>
-        ))}
+        <SliderBtn
+          className="img-slider-btn"
+          onClick={showPrevImage}
+          style={{ left: 0 }}
+          aria-label="View Previous Image"
+        >
+          <span className="material-icons" aria-hidden>
+            keyboard_double_arrow_left
+          </span>
+        </SliderBtn>
+        <SliderBtn
+          className="img-slider-btn"
+          onClick={showNextImage}
+          style={{ right: 0 }}
+          aria-label="View Next Image"
+        >
+          <span className="material-icons" aria-hidden>
+            keyboard_double_arrow_right
+          </span>
+        </SliderBtn>
+        <div className="pagination">
+          {images.map((_, index) => (
+            <button
+              key={index}
+              className="img-slider-dot-btn"
+              aria-label={`View Image ${index + 1}`}
+              onClick={() => setImageIndex(index)}
+            >
+              {index === imageIndex ? (
+                <span className="material-symbols-outlined" aria-hidden>
+                  radio_button_checked
+                </span>
+              ) : (
+                <span className="material-symbols-outlined" aria-hidden>
+                  radio_button_unchecked
+                </span>
+              )}
+            </button>
+          ))}
+        </div>
       </div>
       <div id="after-image-slider-controls" />
     </CarouselContainer>
@@ -90,7 +90,9 @@ const CarouselContainer = styled.section`
   position: relative;
   width: 100%;
   height: 700px;
+  padding: 2rem;
   .img-container {
+    position: relative;
     height: 100%;
     width: 100%;
     overflow: hidden;
@@ -124,7 +126,7 @@ const CarouselContainer = styled.section`
     & > * {
       stroke: white;
       fill: black;
-      width: 2rem;
+      /* width: 2rem; */
       height: 2rem;
     }
     &:hover,

@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import styled from "styled-components";
 import VideoButton from "../buttons/VideoButton";
+import SocialIcons from "../social-icons/SocialIcons";
 
 export default function Home() {
   // const homeRef = useRef();
@@ -32,20 +33,7 @@ export default function Home() {
         {/* <h3 className="text-animation">
           I'm a <span></span>
         </h3> */}
-        <div className="social-icons">
-          <a href="https://www.linkedin.com/in/evangelos-ioannou-84569b151/">
-            <i className="bx bxl-linkedin"></i>
-          </a>
-          <a href="https://github.com/EvangelosIoannou">
-            <i className="bx bxl-github"></i>
-          </a>
-          {/* <a href="#">
-            <i className="bx bxl-instagram-alt"></i>
-          </a> */}
-          {/* <a href="#">
-            <i className="bx bxl-twitter"></i>
-          </a> */}
-        </div>
+        <SocialIcons />
         <div className="btn-group">
           <a href="#portfolio" className="btn">
             Projects
@@ -88,11 +76,12 @@ const HomeContainer = styled.section`
     background-image: url("/data/home/spaceship1.jpg");
     background-position: left top;
     background-repeat: no-repeat; /* Prevents the image from repeating */
-    -webkit-filter: blur(5px);
+    /* transform: scaleX(-1); */
+    /* -webkit-filter: blur(5px);
     -moz-filter: blur(5px);
     -o-filter: blur(5px);
     -ms-filter: blur(5px);
-    filter: blur(5px);
+    filter: blur(5px); */
   }
   .left {
     z-index: 1;
@@ -115,13 +104,13 @@ const HomeContainer = styled.section`
     top: 3rem;
     width: 32vw;
     border-radius: 50%;
-    box-shadow: 0 0 15px var(--main-color);
+    box-shadow: 0 0 15px var(--blue6);
     cursor: pointer;
     transition: 0.4s ease-in-out;
   }
   .right img:hover {
-    box-shadow: 0 0 25px var(--main-color), 0 0 50px var(--main-color),
-      0 0 100px var(--main-color);
+    box-shadow: 0 0 25px var(--blue6), 0 0 50px var(--blue6),
+      0 0 100px var(--blue6);
   }
   .title {
     background-image: var(--gradient);
@@ -136,10 +125,10 @@ const HomeContainer = styled.section`
     }
   } */
   span {
-    color: var(--main-color);
+    color: var(--blue6);
   }
   .logo span {
-    color: var(--main-color);
+    color: var(--blue6);
   }
   h1 {
     padding: 0 0 2rem 0;
@@ -148,40 +137,20 @@ const HomeContainer = styled.section`
     line-height: 1;
     /* text-shadow: 2px 2px 0 #007bff, -2px -2px 0 #007bff, 2px -2px 0 #007bff,
       -2px 2px 0 #007bff; */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7), 0 0 25px var(--main-color),
-      0 0 5px var(--main-color);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7), 0 0 25px var(--blue6),
+      0 0 5px var(--blue6);
     /* text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7), 0 0 25px rgba(0, 255, 0, 0.7),
       0 0 5px rgba(255, 255, 0, 0.8); */
   }
   h3 {
     margin: 2rem 0rem;
     font-size: 3.5rem;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7), 0 0 25px var(--main-color),
-      0 0 5px var(--main-color);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7), 0 0 25px var(--blue6),
+      0 0 5px var(--blue6);
   }
   p {
     font-size: 1.5rem;
     padding: 2rem 0;
-  }
-  .social-icons a {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    width: 4.5rem;
-    height: 4.5rem;
-    background: transparent;
-    border: 2px solid var(--main-color);
-    font-size: 2.5rem;
-    border-radius: 50%;
-    color: var(--main-color);
-    margin: 0rem 0.75rem 3rem 0.75rem;
-    transition: 0.3s ease-in-out;
-  }
-  .social-icons a:hover {
-    color: var(--text-color);
-    transform: scale(1.3) translateY(-5px);
-    box-shadow: 0 0 25px var(--main-color);
-    background-color: var(--main-color);
   }
   .new-btn {
     cursor: pointer;
@@ -200,8 +169,8 @@ const HomeContainer = styled.section`
   .btn {
     display: inline-block;
     padding: 1rem 2.8rem;
-    background: var(--main-color);
-    box-shadow: 0 0 25px var(--main-color);
+    background: var(--blue6);
+    box-shadow: 0 0 25px var(--blue6);
     border-radius: 4rem;
     font-size: 1.6rem;
     color: black;
@@ -213,7 +182,7 @@ const HomeContainer = styled.section`
   }
   .btn:hover {
     transform: scale(1.05);
-    box-shadow: 0 0 50px var(--main-color);
+    box-shadow: 0 0 50px var(--blue6);
   }
   .btn-group {
     display: flex;
@@ -223,13 +192,13 @@ const HomeContainer = styled.section`
   }
   .btn-group a:nth-of-type(2) {
     background-color: black;
-    color: var(--main-color);
-    border: 2px solid var(--main-color);
+    color: var(--blue6);
+    border: 2px solid var(--blue6);
     box-shadow: 0 0 25px transparent;
   }
   .btn-group a:nth-of-type(2):hover {
-    box-shadow: 0 0 25px var(--main-color);
-    background-color: var(--main-color);
+    box-shadow: 0 0 25px var(--blue6);
+    background-color: var(--blue6);
     color: black;
   }
   .text-animation {
@@ -242,7 +211,7 @@ const HomeContainer = styled.section`
   }
   .text-animation span::before {
     content: "Software";
-    color: var(--main-color);
+    color: var(--blue6);
     animation: words 20s infinite;
   }
   .text-animation span::after {
@@ -265,7 +234,7 @@ const HomeContainer = styled.section`
   }
   @keyframes cursor {
     to {
-      border-left: 2px solid var(--main-color);
+      border-left: 2px solid var(--blue6);
     }
   }
   @keyframes words {

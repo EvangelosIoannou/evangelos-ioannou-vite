@@ -6,19 +6,21 @@ export default function ImageAndText() {
   return (
     <ImageAndTextContainer>
       <div className="left">
-        <h4>Hello there! I'm</h4>
-        <h3>Evangelos Ioannou!</h3>
-        <h4>Software Developer</h4>
-        <p>
-          I am a highly motivated and versatile software developer with an
-          enthusiastic approach to everyday tasks. With over 5 years’
-          experience, I am always updating myself on new technologies and
-          current trends and am eager to find a position to express my skills
-          and further enhance them. I pride myself on creating and maintaining
-          strong working relationships with a diverse range of people and
-          understanding the importance of frequent and precise communication
-          when working within a team.
-        </p>
+        <div className="content">
+          <h4>Hello there! I'm</h4>
+          <h3>Evangelos Ioannou!</h3>
+          <h4>Software Developer</h4>
+          <p>
+            I am a highly motivated and versatile software developer with an
+            enthusiastic approach to everyday tasks. With over 5 years’
+            experience, I am always updating myself on new technologies and
+            current trends and am eager to find a position to express my skills
+            and further enhance them. I pride myself on creating and maintaining
+            strong working relationships with a diverse range of people and
+            understanding the importance of frequent and precise communication
+            when working within a team.
+          </p>
+        </div>
       </div>
       <div className="right">
         <div className="image-container">
@@ -40,6 +42,9 @@ const ImageAndTextContainer = styled.div`
     padding: 0 50px 0;
     margin-top: auto;
     margin-bottom: auto;
+    .content {
+      text-align: center;
+    }
   }
   .right {
     width: 50%;

@@ -42,17 +42,17 @@ export default function AboutUs() {
   );
 }
 const AboutUsContainer = styled.section`
-  min-height: 100vh;
-  padding: 10rem 2rem 2rem;
+  /* min-height: 100vh; */
+  padding: 2rem;
   display: flex;
   flex-direction: column;
+  background-color: var(--plumbeous8);
   .content {
     display: flex;
     justify-content: center;
     width: 100%;
     height: 100%;
-    border-radius: 2rem;
-    background: no-repeat center/cover url("/data/home/space1.jpg");
+    /* background: no-repeat center/cover url("/data/home/space1.jpg"); */
   }
   .left {
     width: 50%;
@@ -70,9 +70,9 @@ const AboutUsContainer = styled.section`
     justify-content: center;
     img {
       width: 70%;
-      border-radius: 50%;
+      border-radius: 2rem;
       box-shadow: 0 0 25px var(--main-color);
-      cursor: pointer;
+      /* cursor: pointer; */
       transition: 0.4s ease-in-out;
       display: flex;
       justify-content: center;
