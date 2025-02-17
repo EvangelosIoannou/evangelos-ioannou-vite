@@ -24,7 +24,7 @@ export default function Home() {
         <h1>
           <span>Evangelos</span>
           <br />
-          Ioannou
+          Ioannou woooooo
         </h1>
         <VideoButton />
         {/* <h3>
